@@ -1,0 +1,13 @@
+
+#Changes
+py manage.py makemigrations polls
+
+py manage.py sqlmigrate polls 0001 
+
+#migrate
+py manage.py migrate
+
+
+
+
+http://127.0.0.1:8000/admin/login/?next=/admin/

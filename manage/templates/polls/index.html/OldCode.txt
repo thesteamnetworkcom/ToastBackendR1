@@ -1,0 +1,36 @@
+EqpID = models.ForeignKey(Detail,  on_delete=models.CASCADE)
+    CMC = models.CharField(max_length=150)
+    PMTL = models.ForeignKey(PMTL,  on_delete=models.CASCADE)
+
+
+
+####Facility
+
+    FacilityID = models.ForeignKey(Equipment, on_delete=models.CASCADE)
+    ComplexID = models.ForeignKey(Complex, on_delete=models.CASCADE)
+
+
+
+
+class WorkItem(models.Model):
+    SiteID = models.ForeignKey(Site,db_column='SiteID', on_delete=models.CASCADE)
+    ComplexID = models.ForeignKey(Complex,db_column='ComplexID', on_delete=models.CASCADE)
+    FacilityID = models.ForeignKey(Facility,db_column='FacilityID', on_delete=models.CASCADE)
+    EqpID = models.ForeignKey(Equipment,db_column='EqpID', on_delete=models.CASCADE)
+    DetailID = models.ForeignKey(Detail, db_column='DetailID', on_delete=models.CASCADE)
+    SchedDate = models.CharField(max_length=150)
+    PMTLNumber = models.CharField(max_length=150)
+    WIStatus = models.CharField(max_length=150)
+    WIType = models.CharField(max_length=150)
+    Qty = models.CharField(max_length=150)
+    AssignedTo = models.CharField(max_length=150)
+    AssignedBy = models.CharField(max_length=150)
+    AssignedDate = models.CharField(max_length=150)
+    WorkItemID = models.CharField(max_length=150)
+    notes = models.CharField(max_length=150)
+    Actual = models.CharField(max_length=150)
+
+
+
+
+
